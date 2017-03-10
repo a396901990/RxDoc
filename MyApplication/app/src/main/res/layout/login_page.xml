@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.deanguo.myapplication.SignIn.LoginViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/sign_up_btn"
+                        style="@style/SignUpTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:onClick="@{viewModel.onSignUp}"
+                        android:text="@string/login_page_sign_up"
+                        android:textColor="@color/midnight" />
+
+                    <TextView
+                        style="@style/SignUpTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:padding="20dp"
+                        android:text="@string/login_page_title" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/country_selector"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="@{viewModel.onCountrySelector}"
+                    android:paddingTop="10dp">
+
+                    <TextView
+                        android:id="@+id/country"
+                        style="@style/SignUpText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/country_code"
+                        android:ellipsize="end"
+                        android:maxEms="14"
+                        android:singleLine="true"
+                        android:text="China"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/country_code"
+                        style="@style/SignUpText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:drawablePadding="5dp"
+                        android:drawableRight="@drawable/ico_dropdown"
+                        android:paddingLeft="10dp"
+                        android:text="+86" />
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/phone_input_view"
+                    style="@style/SignUpText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:gravity="center"
+                    android:background="@drawable/edittext_background_white_normal"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:maxLength="@integer/maximum_phone_input_size"
+                    android:minLines="5"
+                    android:textColorHint="@color/white_mid">
+
+                    <requestFocus />
+                </EditText>
+
+                <EditText
+                    android:id="@+id/password_input_view"
+                    style="@style/SignUpText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_background_white_normal"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:maxLength="@integer/maximum_phone_input_size"
+                    android:paddingTop="10dp"
+                    android:textColorHint="@color/white_mid" />
+
+                <TextView
+                    style="@style/SignUpTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:onClick="@{viewModel.onForgetPassword}"
+                    android:padding="5dp"
+                    android:text="@string/login_page_forget_password"
+                    android:textColor="@color/midnight" />
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/confirm_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="20dp"
+            android:background="@drawable/sign_up_confirm_btn_selector"
+            android:enabled="@{viewModel.loginButtonEnable}"
+            android:onClick="@{viewModel.onLogin}"
+            android:text="@string/login_page_title"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/t5" />
+    </FrameLayout>
+
+</layout>

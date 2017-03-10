@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/back_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ico_bak" />
+
+                <TextView
+                    style="@style/SignUpTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:padding="20dp"
+                    android:text="@string/sign_up_validate_code_title" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/input_view"
+                style="@style/SignUpText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="@integer/maximum_phone_input_size" />
+
+            <TextView
+                android:id="@+id/validate_hint"
+                android:visibility="invisible"
+                style="@style/SignUpHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/sign_up_validate_code_hint" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:enabled="false"
+                    android:id="@+id/resend_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/count_down_text"
+                    android:background="@drawable/sign_up_validate_btn"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:paddingTop="3dp"
+                    android:text="@string/sign_up_validate_code_resend"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/t5" />
+
+                <TextView
+                    android:id="@+id/count_down_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="60"
+                    android:textColor="@color/midnight"
+                    android:textSize="@dimen/t5" />
+
+                <Button
+                    android:enabled="false"
+                    android:id="@+id/call_me_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/count_down_text"
+                    android:background="@drawable/sign_up_validate_btn"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:paddingTop="3dp"
+                    android:text="@string/sign_up_validate_code_call_me"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/t5" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/confirm_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="20dp"
+        android:background="@drawable/sign_up_confirm_btn_selector"
+        android:enabled="false"
+        android:text="@string/sign_up_confirm_btn_text"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/t5" />
+</FrameLayout>

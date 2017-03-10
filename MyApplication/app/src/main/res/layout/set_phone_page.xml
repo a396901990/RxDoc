@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+    <TextView
+        style="@style/SignUpTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="@string/sign_up_set_phone_title" />
+
+    <RelativeLayout
+        android:id="@+id/country_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/country"
+            style="@style/SignUpText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/country_code"
+            android:ellipsize="end"
+            android:maxEms="14"
+            android:singleLine="true"
+            android:text="China"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/country_code"
+            style="@style/SignUpText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/ico_dropdown"
+            android:paddingLeft="10dp"
+            android:text="+86" />
+    </RelativeLayout>
+
+
+        <EditText
+            android:id="@+id/input_view"
+            style="@style/SignUpText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:gravity="center"
+            android:inputType="phone"
+            android:maxLength="@integer/maximum_phone_input_size"
+            android:text="" />
+
+    <TextView
+        android:id="@+id/terms_button"
+        style="@style/SignUpHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColorLink="@color/midnight" />
+
+</LinearLayout>

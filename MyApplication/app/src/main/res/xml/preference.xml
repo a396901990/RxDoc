@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="autoBack"
+        android:title="自动回复"
+        android:summaryOn="开启"
+        android:summaryOff="关闭"
+        android:defaultValue="true" />
+
+    <PreferenceCategory android:title="SMS 助手">
+
+        <CheckBoxPreference
+            android:key="smsSilence"
+            android:title="静音"
+            android:summaryOn="开启"
+            android:summaryOff="关闭"
+            android:defaultValue="false" />
+
+        <PreferenceScreen android:title="更多选项">
+            <CheckBoxPreference
+                android:key="cb21"
+                android:title="功能1"
+                android:summaryOn="开启"
+                android:summaryOff="关闭"
+                android:defaultValue="true" />
+            <CheckBoxPreference
+                android:key="cb22"
+                android:title="功能2"
+                android:summaryOn="使用"
+                android:summaryOff="停用"
+                android:defaultValue="true" />
+
+            <!--<ListPreference-->
+                <!--android:key="list1"-->
+                <!--android:title="android forum"-->
+                <!--android:summary="开发论坛"-->
+                <!--android:dialogTitle="请选择论坛"-->
+                <!--android:entries="@array/entries_list_preference"-->
+                <!--android:entryValues="@array/entriesvalue_list_preference" />-->
+
+            <EditTextPreference
+                android:key="et1"
+                android:title="EditTextPreference Sample"
+                android:summary="点击输入"
+                android:dialogTitle="输入设置"
+                android:defaultValue="Hello EditTextPreference" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="其他选项">
+        <RingtonePreference
+            android:key="rt1"
+            android:title="RingtonePreference Sample"
+            android:summary="选择铃声" />
+    </PreferenceCategory>
+
+</PreferenceScreen>  

@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="p01_terms_and_service">By continuing, you have to agree to the &lt;a href=\"http://www.select.id/terms\"&gt;Terms of Service &amp; Privacy Policy&lt;/a&gt;</string>
+
+    <string name="sign_up_confirm_btn_text">Continue</string>
+    <string name="sign_up_skip_btn_text">Skip</string>
+    <string name="sign_up_add_all_btn_text">Add All</string>
+    <string name="sign_up_set_phone_title">What is your phone number</string>
+    <string name="sign_up_set_phone_send_text">Send Confirmation Code</string>
+
+    <string name="sign_up_validate_code_title">Enter your verification code</string>
+    <string name="sign_up_validate_code_hint">There are some problem of the verification code</string>
+    <string name="sign_up_validate_code_resend">Resend</string>
+    <string name="sign_up_validate_code_call_me">Call Me</string>
+
+    <string name="sign_up_find_friend_title">Find Your Friends</string>
+    <string name="sign_up_find_friend_hint">Need to access to your contacts book to help you find your friends and your info will never be used for other purposes</string>
+    <string name="sign_up_find_friend_no">Nan, i will stay alone</string>
+
+    <string name="sign_up_set_user_name_title">Set your SELECT ID</string>
+    <string name="sign_up_set_user_name_wrong_hint">"Neil" is already been used, you can try "Neil001"</string>
+    <string name="sign_up_set_user_name_hint">The SELECT ID is unique in teh app and you can not change it after you set it</string>
+
+    <string name="sign_up_set_password_title">Set your password</string>
+    <string name="sign_up_set_password_hint">The password need to be longer than 5 characters long with any letter number or symble</string>
+
+    <string name="sign_up_set_profile_title">Set your profile</string>
+    <string name="sign_up_set_profile_hint">This display name can be changed later in your profile page</string>
+
+    <string name="sign_up_set_birthday_title">Set your birthday</string>
+    <string name="sign_up_set_birthday_hint">This birthday can be changed later in your profile page</string>
+
+    <string name="sign_up_set_gender_title">Set your gender</string>
+    <string name="sign_up_set_gender_hint">This gender name can be changed later in your profile page</string>
+
+    <string name="sign_up_set_email_title">Set your email</string>
+    <string name="sign_up_set_email_hint">This email can be changed later in your profile page</string>
+
+    <string name="sign_up_recommend_title">Friend Recommendations</string>
+    <string name="p_birthday">yyyy-MM-dd</string>
+
+    <string name="sign_up_recommend_invited_you_title">People who invited you</string>
+    <string name="sign_up_recommend_recommend_title">Recommended</string>
+    <string name="sign_up_recommend_invite_title">Invite Friends</string>
+
+    <string name="login_page_title">Login</string>
+    <string name="login_page_sign_up">Sign up</string>
+    <string name="login_page_forget_password">Forget Password</string>
+    <string name="login_page_phone_hint">Your phone number</string>
+    <string name="login_page_password_hint">Password</string>
+
+    <string name="reset_password_page_title">Reset password</string>
+    <string name="reset_password_hint">New Password</string>
+
+    <string name="forget_password_page_title">Forget password</string>
+    <string name="forget_password_page_phone">Your phone number</string>
+    <string name="forget_password_page_code">Verification Code</string>
+    <string name="forget_password_page_send_code">Send me verification code</string>
+</resources>

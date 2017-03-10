@@ -1,0 +1,43 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="SignUpTitle" parent="android:style/Widget.TextView">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/t5</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SignUpText" parent="android:style/Widget.TextView">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/t1</item>
+        <item name="android:textColor">@color/midnight</item>
+
+    </style>
+
+    <style name="SignUpHint" parent="android:style/Widget.TextView">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/t7</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SignUpEditText" parent="android:Widget.Holo.EditText">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/t1</item>
+        <item name="android:textColor">@color/midnight</item>
+        <item name="android:textCursorDrawable">@null</item>
+    </style>
+
+
+
+</resources>
