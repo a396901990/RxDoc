@@ -5,9 +5,10 @@ package com.example.deanguo.myapplication.network;
  */
 
 public class TestEvent {
-    public TestEvent(int test) {
+    String test;
+
+    public TestEvent(String test) {
         this.test = test;
     }
 
-    int test = 0;
 }
