@@ -5,7 +5,6 @@ import android.widget.Button;
 
 import com.example.deanguo.myapplication.R;
 import com.trello.rxlifecycle.components.RxActivity;
-import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import java.util.concurrent.TimeUnit;
 
@@ -23,17 +22,14 @@ public class MainActivity extends RxActivity {
     @BindView(R.id.test_rxbus)
     Button test_rxbus;
 
-
     @BindView(R.id.test_zip)
     Button test_zip;
-
 
     @BindView(R.id.test_merge)
     Button test_merge;
 
     @BindView(R.id.test_contact)
     Button test_contact;
-
 
     @BindView(R.id.test_take)
     Button test_take;
@@ -149,6 +145,31 @@ public class MainActivity extends RxActivity {
                     @Override
                     public void onCompleted() {
 
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        int a =0 ;
+                    }
+
+                    @Override
+                    public void onNext(String s) {
+                        int a =0 ;
+                    }
+                });
+    }
+
+    @OnClick(R.id.test_timeout)
+    public void testTimeout() {
+        analogNetwork(10, "test")
+                .compose(SERxUtil.<String>setTimeOut(3))
+                .compose(SERxUtil.<String>bindToLifecycle(this))
+                .compose(SERxUtil.<String>changeScheduler())
+                .retryWhen(SERxUtil.retryTimes(3))
+                .subscribe(new Subscriber<String>() {
+                    @Override
+                    public void onCompleted() {
+                        int a =0 ;
                     }
 
                     @Override

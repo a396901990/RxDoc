@@ -17,7 +17,6 @@ public class RetryWhenProcess implements Func1<Observable<? extends Throwable>, 
     private int retryTimes;
 
     public RetryWhenProcess(long interval) {
-
         mInterval = interval;
     }
 
