@@ -6,6 +6,8 @@ import android.widget.Button;
 import com.example.deanguo.myapplication.R;
 import com.trello.rxlifecycle.components.RxActivity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
@@ -67,21 +69,19 @@ public class MainActivity extends RxActivity {
                 });
     }
 
-
-    String result = "";
-
     @OnClick(R.id.test_merge)
     public void rxMergeTest() {
 
+        final List<String> datas = new ArrayList<>();
+
         Observable
-                .merge(analogNetwork(1, "test1"), analogNetwork(3, "test2"))
+                .merge(analogNetwork(1, "getFromInternet"), analogNetwork(3, "getFromFile"), analogNetwork(5, "getFromDatabase"))
                 .compose(this.<String>bindToLifecycle())
                 .compose(SERxUtil.<String>changeScheduler())
                 .subscribe(new Action1<String>() {
                     @Override
                     public void call(String s) {
-                        result += s;
-                        test_merge.setText(result);
+                        datas.add(s);
                     }
                 });
     }
@@ -89,7 +89,7 @@ public class MainActivity extends RxActivity {
     @OnClick(R.id.test_contact)
     public void rxContactTest() {
         Observable
-                .concat(analogNetwork(0, "fromCache"), analogNetwork(2, "fromDatabase"), analogNetwork(3, "fromInternet"))
+                .concat(analogNetwork(0, "fromMemory"), analogNetwork(2, "fromDatabase"), analogNetwork(3, "fromInternet"))
                 .compose(this.<String>bindToLifecycle())
                 .compose(SERxUtil.<String>changeScheduler())
                 .first(new Func1<String, Boolean>() {
@@ -98,10 +98,10 @@ public class MainActivity extends RxActivity {
                         return s.equals("fromDatabase");
                     }
                 }).subscribe(new Action1<String>() {
-            @Override
-            public void call(String s) {
-                test_contact.setText(s);
-            }
+                    @Override
+                    public void call(String s) {
+                        test_contact.setText(s);
+                    }
         });
     }
 
@@ -199,12 +199,6 @@ public class MainActivity extends RxActivity {
 
     public Observable<String> analogNetwork(long delay, final String data) {
         return Observable.just(data).delay(delay, TimeUnit.SECONDS);
-//        return Observable.timer(delay, TimeUnit.SECONDS).map(new Func1<Long, String>() {
-//            @Override
-//            public String call(Long aLong) {
-//                return data;
-//            }
-//        });
     }
 
     public Observable<String> analogBadNetwork(long delay, final String data) {
