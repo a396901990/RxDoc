@@ -15,9 +15,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import rx.Observable;
 import rx.Subscriber;
+import rx.functions.Action0;
 import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.functions.Func2;
+import rx.schedulers.Schedulers;
 
 public class MainActivity extends RxActivity {
 
@@ -35,6 +37,9 @@ public class MainActivity extends RxActivity {
 
     @BindView(R.id.test_take)
     Button test_take;
+
+    @BindView(R.id.test_toList)
+    Button test_toList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -159,6 +164,38 @@ public class MainActivity extends RxActivity {
                 });
     }
 
+    @OnClick(R.id.test_toList)
+    public void testToList() {
+        List<String> list = new ArrayList<>();
+        list.add("A");
+        list.add("B");
+        list.add("C");
+        list.add("D");
+        list.add("E");
+
+        Observable.from(list)
+                .map(new Func1<String, String>() {
+                    @Override
+                    public String call(String s) {
+                        return s + s;
+                    }
+                })
+                .toList()
+                .doOnNext(new Action1<List<String>>() {
+                    @Override
+                    public void call(List<String> list) {
+                        test_toList.setText("end");
+                    }
+                })
+                .subscribe(new Action1<List<String>>() {
+                    @Override
+                    public void call(List<String> list) {
+                        test_toList.setText(list.toString());
+                    }
+                });
+
+    }
+
     @OnClick(R.id.test_timeout)
     public void testTimeout() {
         analogNetwork(10, "test")
@@ -192,7 +229,7 @@ public class MainActivity extends RxActivity {
                 .subscribe(new Action1<TestEvent>() {
                     @Override
                     public void call(TestEvent testEvent) {
-                        test_zip.setText(testEvent.test);
+                        test_rxbus.setText(testEvent.test);
                     }
                 });
     }
